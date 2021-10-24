@@ -1,0 +1,54 @@
+#include<stdio.h>
+int main()
+{
+	int x = 0, n = 0, factorial = 1, p = 2, i, k, j;
+    float y = 0 , q = 1, r;
+
+	printf("Enter the number = ");
+	scanf("%d", &x);
+
+//The the number of terms must be odd
+
+	printf("Enter the number of terms = ");
+	scanf("%d", &n);
+
+	if (n%2==1)
+	{
+		for (int i = 1; i <= n; i = i + 2)
+		{
+			for (int k = i; k >= 1; k--)
+			{
+				factorial = factorial * k;
+			}
+			 printf("\nFactorial of %d = %d\n", i, factorial);
+
+//'for' loop for the calculating the number of terms
+
+			for(int j = 0; j < i; j++)
+            {
+                q = q*x;
+            }
+
+			if (p % 2 == 0)
+			{
+				y = y + (q / factorial);
+				p++;
+			}
+			else
+			{
+				y = y - (q / factorial);
+				p++;
+			}
+			factorial = 1;
+			q = 1;
+		}
+		printf("\nSo, y = %f ", y);
+	}
+
+	else
+        {
+            printf("\nInvalid! The number of terms must be odd");
+        }
+
+	return 0;
+}
